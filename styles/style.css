@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #000;
+    font-family: sans-serif;
+    list-style-type: none;
+
+}
+
+a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    background: red;
+    z-index: 9;
+}
+
+header .logo, header .logo img {
+    width: 200px;
+    height: 100%;
+    object-fit: contain;
+}
+
+nav>ul {
+    /* width: 60%; */
+    height: 100%;
+    min-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+nav ul li {
+    width: 100px;
+    height: 100%;
+    text-align: center;
+    line-height: 80px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li:hover .dropdown {
+    display: flex;
+}
+
+nav ul li .dropdown {
+    display: none;
+    width: 200px;
+    /* height: fit-content; */
+    position: absolute;
+    flex-flow: column nowrap;
+    top: 100%;
+    right: 0;
+    border: 2px solid lime;
+    background: #000;
+}
+
+nav ul li .dropdown li {
+    width: 100%;
+    gap: 0;
+    height: 50px;
+    color: #fff;
+    /* border: 2px dashed lime; */
+    line-height: 50px;
+}
+
+#first {
+    height: 100svh;
+    position: relative;
+    margin-top: 80px;
+    background: var(--logo-bg);
+    border: 5px solid lime;
+}
+
+#logo-text {
+    width: 900px;
+    position: absolute;
+    top: 10%;
+    right: 10px;
+    outline: 10px solid var(--logo-bg);
+    outline-offset: -5px;
+}
+
+#first .first-headers {
+    position: absolute;
+    top: 30%;
+    left: 100px;
+    width: 600px;
+}
+
+#first .first-headers * {
+    color: var(--text-light);
+
+}
+
+#projects .fr-c div {
+    width: 150px;
+    height: 100px;
+    /* border: 3px solid black; */
+}
+
+#projects .fr-c div img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.card {
+    width: 300px;
+    height: 250px;
+    padding: 10px 20px;
+    /* border: 2px solid black; */
+    border-radius: 8px;
+    /* background: var(--secondary); */
+    box-shadow: 15px 15px 30px #bebebe,
+        -15px -15px 30px #ffffff;
+}
