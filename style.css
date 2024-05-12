@@ -480,8 +480,10 @@ nav ul li a {
 .logo-text-wrapper {
     width: 900px;
     position: absolute;
-    top: 10%;
+    /* top: 25%; */
+    bottom: 50%;
     right: 10px;
+    transform: translateY(50%);
     outline: 20px solid var(--logo-bg);
     outline-offset: -10px;
 }
@@ -490,7 +492,7 @@ nav ul li a {
 #home .first-headers {
     max-width: 600px;
     position: absolute;
-    top: 30%;
+    top: 42%;
     left: 100px;
 }
 
@@ -745,14 +747,17 @@ footer * {
 
     #home .logo-text-wrapper {
         width: 600px;
-        top: 20%;
+        /* top: 40%; */
 
     }
 }
 
 @media screen and (max-width: 900px) {
+    #home .first-headers * {
+        font-size: 1rem !important;
+    }
     .first-headers {
-        top: 10% !important;
+        top: 150px !important;
         left: 50% !important;
         -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
@@ -761,8 +766,9 @@ footer * {
     }
 
     #home .logo-text-wrapper {
-        top: 40% !important;
+        bottom: 100px !important;
         width: 100vw;
+        transform: none;
     }
 
     footer {
@@ -773,20 +779,31 @@ footer * {
     }
 }
 
+/* !gauqmebuli */
+/* @media screen and (max-width: 900px) and (max-height: 950px){
+    #home .first-headers{
+        top: 50% !important;
+        transform: translate(-50%, -50%);
+    }
+    #home .logo-text-wrapper{
+        bottom: 50% !important;
+        transform: translateY(50%);
+        opacity: .3;
+    }
+} */
+
 @media screen and (max-width: 600px) {
     #home .first-headers * {
         text-align: center;
     }
 
-    #home .logo-text-wrapper {
+    /* #home .logo-text-wrapper {
         top: 55% !important;
-    }
+    } */
 }
 
 @media screen and (max-width: 500px) {
-    #home .first-headers * {
-        font-size: 1rem !important;
-    }
+    
 
     nav ul li {
         width: 70px !important;
@@ -803,6 +820,8 @@ footer * {
         -webkit-box-direction: normal;
         -ms-flex-flow: column nowrap;
         flex-flow: column nowrap;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .fr-b * {
