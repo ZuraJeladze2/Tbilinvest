@@ -22,11 +22,13 @@ header {
     height: 80px;
     display: flex;
     justify-content: space-between;
-    background: red;
+    background: var(--logo-bg);
     z-index: 9;
+    box-shadow: 0 3px 0px var(--main);
 }
 
-header .logo, header .logo img {
+header .logo,
+header .logo img {
     width: 200px;
     height: 100%;
     object-fit: contain;
@@ -47,11 +49,14 @@ nav ul li {
     width: 100px;
     height: 100%;
     text-align: center;
+    position: relative;
     line-height: 80px;
+    color: var(--text-light);
+
 }
 
-nav ul li {
-    position: relative;
+nav ul li a {
+    color: var(--text-light);
 }
 
 nav ul li:hover .dropdown {
@@ -65,18 +70,39 @@ nav ul li .dropdown {
     position: absolute;
     flex-flow: column nowrap;
     top: 100%;
-    right: 0;
-    border: 2px solid lime;
+    right: 50%;
+    transform: translateX(50%);
+    border: 5px solid var(--main);
+    border-top: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
     background: #000;
+}
+
+nav ul li .dropdown.left {
+    right: 0;
+    transform: translateX(0px);
 }
 
 nav ul li .dropdown li {
     width: 100%;
     gap: 0;
     height: 50px;
-    color: #fff;
+    color: var(--text-light);
     /* border: 2px dashed lime; */
     line-height: 50px;
+    position: relative;
+}
+
+nav ul li .dropdown li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 90%;
+    height: 3px;
+    background: var(--main);
+    transform: translate(-50%, -50%);
 }
 
 #first {
@@ -84,17 +110,22 @@ nav ul li .dropdown li {
     position: relative;
     margin-top: 80px;
     background: var(--logo-bg);
-    border: 5px solid lime;
 }
 
-#logo-text {
+.first-headers-h1 {
+    font-size: 2rem;
+    /* text-shadow: 0px 0px 21px var(--main); */
+}
+
+.logo-text-wrapper {
     width: 900px;
     position: absolute;
     top: 10%;
     right: 10px;
-    outline: 10px solid var(--logo-bg);
-    outline-offset: -5px;
+    outline: 20px solid var(--logo-bg);
+    outline-offset: -10px;
 }
+
 
 #first .first-headers {
     position: absolute;
@@ -103,9 +134,15 @@ nav ul li .dropdown li {
     width: 600px;
 }
 
-#first .first-headers * {
+
+.first-headers * {
     color: var(--text-light);
 
+}
+
+.first-headers-h3 {
+    margin-top: 10px;
+    color: var(--main-dark);
 }
 
 #projects .fr-c div {
@@ -123,11 +160,29 @@ nav ul li .dropdown li {
 
 .card {
     width: 300px;
-    height: 250px;
+    min-height: 250px;
     padding: 10px 20px;
     /* border: 2px solid black; */
     border-radius: 8px;
     /* background: var(--secondary); */
     box-shadow: 15px 15px 30px #bebebe,
         -15px -15px 30px #ffffff;
+}
+
+.card h4 {
+    text-align: center;
+}
+
+.card p {
+    line-height: 130%;
+}
+
+.about-us-text {
+    line-height: 140%;
+    font-size: 1.5rem;
+    width: 600px;
+}
+
+.about-us-img {
+    width: 600px;
 }

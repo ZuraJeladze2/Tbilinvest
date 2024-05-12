@@ -2,11 +2,15 @@ html{
     scroll-behavior: smooth;
 }
 
+img{
+    width: 100%;
+}
+
 section:not(#first){
     margin-left: auto;
     margin-right: auto;
     max-width: 1600px;
-    padding: 50px 120px;
+    padding: 90px 120px;
 }
 section h2{
     text-transform: uppercase;
@@ -23,6 +27,14 @@ article strong::after{
     background: radial-gradient(transparent, var(--secondary), transparent);
 }
 
+.fr-b{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+    gap: 50px;
+}
 .fr-c{
     width: 100%;
     display: flex;
@@ -54,4 +66,8 @@ article strong::after{
     align-items: center;
     flex-flow: column nowrap;
     gap: 20px;
+}
+
+.gold{
+    color: var(--main) !important;
 }
