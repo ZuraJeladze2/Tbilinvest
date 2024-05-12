@@ -1,7 +1,15 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     text-decoration: none;
     color: #000;
     font-family: sans-serif;
@@ -20,27 +28,39 @@ header {
     top: 0;
     width: 100vw;
     height: 80px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     background: var(--logo-bg);
     z-index: 9;
-    box-shadow: 0 3px 0px var(--main);
+    -webkit-box-shadow: 0 3px 0px var(--main);
+            box-shadow: 0 3px 0px var(--main);
 }
 
 header .logo,
 header .logo img {
     width: 200px;
     height: 100%;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
 }
 
 nav>ul {
     /* width: 60%; */
     height: 100%;
     min-width: 500px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     gap: 10px;
     font-weight: bold;
 }
@@ -52,36 +72,61 @@ nav ul li {
     position: relative;
     line-height: 80px;
     color: var(--text-light);
-
+    opacity: .8;
+    -webkit-transition: all 300ms ;
+    -o-transition: all 300ms ;
+    transition: all 300ms ;
 }
 
 nav ul li a {
     color: var(--text-light);
 }
 
+nav ul li:hover {
+    opacity: 1;
+}
 nav ul li:hover .dropdown {
-    display: flex;
+    scale: 1;
+    /* display: flex; */
 }
 
 nav ul li .dropdown {
-    display: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transition: all 300ms;
+    -o-transition: all 300ms;
+    transition: all 300ms;
+    /* display: none; */
     width: 200px;
     /* height: fit-content; */
     position: absolute;
-    flex-flow: column nowrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
     top: 100%;
     right: 50%;
-    transform: translateX(50%);
-    border: 5px solid var(--main);
+    -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+            transform: translateX(50%);
+    border: 3px solid var(--main);
     border-top: none;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     background: #000;
+    scale: 0;
+    overflow: hidden;
+    -webkit-transform-origin: top right;
+        -ms-transform-origin: top right;
+            transform-origin: top right;
 }
 
 nav ul li .dropdown.left {
     right: 0;
-    transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+            transform: translateX(0px);
 }
 
 nav ul li .dropdown li {
@@ -92,6 +137,7 @@ nav ul li .dropdown li {
     /* border: 2px dashed lime; */
     line-height: 50px;
     position: relative;
+    cursor: default;
 }
 
 nav ul li .dropdown li:not(:last-child)::after {
@@ -100,12 +146,16 @@ nav ul li .dropdown li:not(:last-child)::after {
     left: 50%;
     top: 100%;
     width: 90%;
-    height: 3px;
-    background: var(--main);
-    transform: translate(-50%, -50%);
+    height: 2px;
+    background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(var(--main)), to(transparent));
+    background: -o-linear-gradient(left, transparent, var(--main), transparent);
+    background: linear-gradient(90deg, transparent, var(--main), transparent);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
 }
 
-#first {
+#home {
     height: 100svh;
     position: relative;
     margin-top: 80px;
@@ -127,7 +177,7 @@ nav ul li .dropdown li:not(:last-child)::after {
 }
 
 
-#first .first-headers {
+#home .first-headers {
     position: absolute;
     top: 30%;
     left: 100px;
@@ -154,8 +204,10 @@ nav ul li .dropdown li:not(:last-child)::after {
 #projects .fr-c div img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    object-position: center;
+    -o-object-fit: contain;
+       object-fit: contain;
+    -o-object-position: center;
+       object-position: center;
 }
 
 .card {
@@ -165,7 +217,9 @@ nav ul li .dropdown li:not(:last-child)::after {
     /* border: 2px solid black; */
     border-radius: 8px;
     /* background: var(--secondary); */
-    box-shadow: 15px 15px 30px #bebebe,
+    -webkit-box-shadow: 15px 15px 30px #bebebe,
+        -15px -15px 30px #ffffff;
+            box-shadow: 15px 15px 30px #bebebe,
         -15px -15px 30px #ffffff;
 }
 
@@ -185,4 +239,69 @@ nav ul li .dropdown li:not(:last-child)::after {
 
 .about-us-img {
     width: 600px;
+}
+
+footer{
+    background-color: var(--logo-bg);
+    padding: 20px 100px;
+}
+footer *{
+    color: var(--text-light);
+}
+.footer-about-us{
+    width: 400px;
+    font-size: 1.1rem;
+    line-height: 125%;
+    /* margin-right: 150px; */
+    /* background: lime; */
+}
+.footer-about-us-h4{
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-bottom: 30px;
+    position: relative;
+}
+.footer-about-us-h4::after{
+    content: '';
+    position: absolute;
+    top: 120%;
+    left: 0px;
+    width: 180%;
+    height: 2px;
+    background: -webkit-gradient(linear,
+                left top, right top,
+                color-stop(60%, var(--main)),
+                to(transparent));
+    background: -o-linear-gradient(left,
+                var(--main) 60%,
+                transparent);
+    background: linear-gradient(90deg,
+                var(--main) 60%,
+                transparent);
+}
+.footer-address-ul{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    gap: 15px;
+}
+.footer-address-ul li{
+    font-size: 1.3rem;
+    padding: 5px 10px 5px 55px;
+    position: relative;
+}
+.footer-address-ul li svg{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
 }
