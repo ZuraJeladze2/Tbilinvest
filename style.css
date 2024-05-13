@@ -19,7 +19,7 @@
     --secondary: #b0b0b0;
     --text-dark: #000;
     --text-light: #fff;
-    --logo-bg: #071017;
+    --logo-bg-light: #ffffff;
 }
 
 /* ^variables^ */
@@ -27,6 +27,10 @@
 /* vutilityv */
 html {
     scroll-behavior: smooth;
+}
+
+svg {
+    fill: var(--text-dark);
 }
 
 img {
@@ -150,14 +154,18 @@ article strong::after {
 .gold {
     color: var(--main) !important;
 }
+::selection{
+    color: var(--main);
+    background: var(--text-dark);
+}
 
 /* ^utility^ */
 
-/* vcarcv */
+/* vcardv */
 .ui-card {
     width: 300px;
     height: 200px;
-    background: var(--logo-bg);
+    background: var(--logo-bg-light);
     position: relative;
     display: -ms-grid;
     display: grid;
@@ -203,7 +211,7 @@ article strong::after {
     text-transform: uppercase;
     padding: 0px 5px 0px 8px;
     color: #bd9f67;
-    background: var(--logo-bg);
+    background: var(--logo-bg-light);
     opacity: 0;
     letter-spacing: 7px;
     -webkit-transition: all 0.5s ease-in-out;
@@ -415,7 +423,7 @@ header {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    background: var(--logo-bg);
+    background: var(--logo-bg-light);
     z-index: 9;
     -webkit-box-shadow: 0 3px 0px var(--main);
     box-shadow: 0 3px 0px var(--main);
@@ -450,15 +458,15 @@ nav ul li {
     text-align: center;
     position: relative;
     line-height: 80px;
-    color: var(--text-light);
-    opacity: .8;
+    color: var(--text-dark);
+    opacity: .7;
     -webkit-transition: all 300ms;
     -o-transition: all 300ms;
     transition: all 300ms;
 }
 
 nav ul li a {
-    color: var(--text-light);
+    color: var(--text-dark);
 }
 
 .dropdown {
@@ -469,7 +477,7 @@ nav ul li a {
     height: 100svh;
     position: relative;
     padding-top: 120px;
-    background: var(--logo-bg);
+    /* background: var(--logo-bg-light); */
 }
 
 .first-headers-h1 {
@@ -484,8 +492,8 @@ nav ul li a {
     bottom: 50%;
     right: 10px;
     transform: translateY(50%);
-    outline: 20px solid var(--logo-bg);
-    outline-offset: -10px;
+    /* outline: 20px solid var(--logo-bg-light);
+    outline-offset: -10px; */
 }
 
 
@@ -498,7 +506,7 @@ nav ul li a {
 
 
 .first-headers * {
-    color: var(--text-light);
+    color: var(--text-dark);
 
 }
 
@@ -523,21 +531,21 @@ nav ul li a {
 }
 
 .hover-madness,
-.hover-madness div {
+.hover-madness > div {
     -webkit-transition: all 300ms;
     -o-transition: all 300ms;
     transition: all 300ms;
     cursor: default;
 }
 
-.hover-madness:hover div {
+.hover-madness:hover > div {
     opacity: .6;
     -webkit-transform: scale(.9);
     -ms-transform: scale(.9);
     transform: scale(.9);
 }
 
-.hover-madness div:hover {
+.hover-madness > div:hover {
     opacity: 1;
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
@@ -552,8 +560,7 @@ nav ul li a {
 
 .card {
     width: 300px;
-    min-height: 250px;
-    padding: 10px 20px;
+    height: 430px;
     border: 3px solid;
     -o-border-image: -o-linear-gradient(40deg, var(--main) 10%, black, var(--main) 90%) 1 round;
     border-image: linear-gradient(40deg, var(--main) 10%, black, var(--main) 90%) 1 round;
@@ -564,10 +571,30 @@ nav ul li a {
     box-shadow: 15px 15px 30px #bebebe,
         -15px -15px 30px #ffffff;
 }
+.card.short{
+    height: 340px;
+}
+
+.card-head{
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+
+.card-head img{
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+.card-body{
+    padding: 10px 20px;
+}
 
 .card h4 {
     font-size: 1.3rem;
     text-align: center;
+    margin-bottom: 15px;
 }
 
 .card p {
@@ -585,12 +612,14 @@ nav ul li a {
 }
 
 footer {
-    background-color: var(--logo-bg);
+    background-color: var(--logo-bg-light);
     padding: 20px 100px;
+    box-shadow: 0 -3px 0px var(--main);
+
 }
 
 footer * {
-    color: var(--text-light);
+    color: var(--text-dark);
 }
 
 .footer-about-us {
@@ -694,7 +723,7 @@ footer * {
         border-top: none;
         border-bottom-left-radius: 8px;
         border-bottom-right-radius: 8px;
-        background: #000;
+        background: var(--logo-bg-light);
         scale: 0;
         overflow: hidden;
         -webkit-transform-origin: top right;
@@ -713,7 +742,7 @@ footer * {
         width: 100%;
         gap: 0;
         height: 50px;
-        color: var(--text-light);
+        color: var(--text-dark);
         /* border: 2px dashed lime; */
         line-height: 50px;
         position: relative;
@@ -756,6 +785,7 @@ footer * {
     #home .first-headers * {
         font-size: 1rem !important;
     }
+
     .first-headers {
         top: 150px !important;
         left: 50% !important;
@@ -803,7 +833,7 @@ footer * {
 }
 
 @media screen and (max-width: 500px) {
-    
+
 
     nav ul li {
         width: 70px !important;
