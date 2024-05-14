@@ -40,7 +40,7 @@ img {
 section:not(#home) {
     margin-left: auto;
     margin-right: auto;
-    max-width: 1600px;
+    /* max-width: 1600px; */
     padding: 90px 120px;
 }
 
@@ -154,7 +154,8 @@ article strong::after {
 .gold {
     color: var(--main) !important;
 }
-::selection{
+
+::selection {
     color: var(--main);
     background: var(--text-dark);
 }
@@ -486,7 +487,7 @@ nav ul li a {
 }
 
 .logo-text-wrapper {
-    width: 900px;
+    width: 800px;
     position: absolute;
     /* top: 25%; */
     bottom: 50%;
@@ -515,6 +516,8 @@ nav ul li a {
     color: var(--main-dark);
 }
 
+
+
 #projects .fr-c div {
     width: 150px;
     height: 100px;
@@ -530,27 +533,6 @@ nav ul li a {
     object-position: center;
 }
 
-.hover-madness,
-.hover-madness > div {
-    -webkit-transition: all 300ms;
-    -o-transition: all 300ms;
-    transition: all 300ms;
-    cursor: default;
-}
-
-.hover-madness:hover > div {
-    opacity: .6;
-    -webkit-transform: scale(.9);
-    -ms-transform: scale(.9);
-    transform: scale(.9);
-}
-
-.hover-madness > div:hover {
-    opacity: 1;
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-}
 
 .cards-wrapper {
     margin-left: auto;
@@ -571,23 +553,24 @@ nav ul li a {
     box-shadow: 15px 15px 30px #bebebe,
         -15px -15px 30px #ffffff;
 }
-.card.short{
+
+.card.short {
     height: 340px;
 }
 
-.card-head{
+.card-head {
     width: 100%;
     height: 150px;
     overflow: hidden;
 }
 
-.card-head img{
+.card-head img {
     height: 100%;
     object-fit: cover;
     object-position: bottom;
 }
 
-.card-body{
+.card-body {
     padding: 10px 20px;
 }
 
@@ -685,6 +668,10 @@ footer * {
     transform: translateY(-50%);
 }
 
+#services article {
+    max-width: 1400px !important;
+}
+
 @media screen and (min-width: 560px) {
     header {
         padding: 0 50px;
@@ -763,7 +750,31 @@ footer * {
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
     }
+
+
+    .hover-madness,
+    .hover-madness>div {
+        -webkit-transition: all 300ms;
+        -o-transition: all 300ms;
+        transition: all 300ms;
+        cursor: default;
+    }
+
+    .hover-madness:hover>div {
+        opacity: .6;
+        -webkit-transform: scale(.9);
+        -ms-transform: scale(.9);
+        transform: scale(.9);
+    }
+
+    .hover-madness>div:hover {
+        opacity: 1;
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+    }
 }
+
 
 @media screen and (max-width: 1400px) {
     .first-headers {
@@ -775,7 +786,7 @@ footer * {
     }
 
     #home .logo-text-wrapper {
-        width: 600px;
+        width: 500px;
         /* top: 40%; */
 
     }
@@ -796,9 +807,11 @@ footer * {
     }
 
     #home .logo-text-wrapper {
-        bottom: 100px !important;
+        bottom: 10px !important;
+        right: 50%;
         width: 100vw;
-        transform: none;
+        max-width: 500px !important;
+        transform: translateX(50%);
     }
 
     footer {
